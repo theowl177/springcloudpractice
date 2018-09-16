@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: hello-service
+
+server:
+  port: 8081
+
+management:
+  endpoints:
+    web:
+      base-path: /ms
+      exposure:
+        include: info,health,beans,httptrace,env,configprops,mappings
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer1:1111/eureka/,http://peer2:1112/eureka/
